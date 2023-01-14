@@ -156,9 +156,9 @@ macro(project name)
 
   add_custom_command(TARGET ${name}.elf POST_BUILD
   COMMAND ${CMAKE_OBJCOPY} -Obinary $<TARGET_FILE:${name}.elf> ${BIN_FILE}
-  COMMAND ${CMAKE_OBJDUMP} -d -S $<TARGET_FILE:${name}.elf> >${ASM_FILE}
-  # COMMAND ${CMAKE_OBJCOPY} -Oihex $<TARGET_FILE:${mainname}.elf> ${HEX_FILE}
-  COMMAND ${SIZE} $<TARGET_FILE:${name}.elf>
+  # COMMAND ${CMAKE_OBJDUMP} -d -S $<TARGET_FILE:${name}.elf> >${ASM_FILE}
+  COMMAND ${CMAKE_OBJCOPY} -Oihex $<TARGET_FILE:${name}.elf> ${HEX_FILE}
+  # COMMAND ${SIZE} $<TARGET_FILE:${name}.elf>
   COMMENT "Generate ${BIN_FILE}\r\n")
 
 endmacro()

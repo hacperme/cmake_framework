@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.15)
 
 message("examples/helloworld start")
 
-find_package(xxx_sdk REQUIRED HINTS $ENV{SDK_BASE})
+find_package(qt_idf_sdk REQUIRED HINTS $ENV{SDK_BASE})
 
 # sdk_set_linker_script(template.ld)
 # target_sources(app PRIVATE xxxx.c xxxx2.c)

@@ -42,7 +42,7 @@ sdk_add_link_options(
 # --specs=nano.specs
 )
 
-sdk_add_link_libraries(c m)
+# sdk_add_link_libraries(c m)
 
 
 sdk_add_compile_options_ifdef(CONFIG_DEBUG -g3)
