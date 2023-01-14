@@ -1,0 +1,17 @@
+name: CI
+on: 
+  push:
+
+jobs:
+  build_job:
+    name: build job
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Checkout submodules
+      run: git submodule update --init --recursive
+    - name: Build
+      run: env.bat && cd examples && make -j32
+      shell: cmd
+        
